@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="BioBit | Eat Bits, Get Big.">
+    <meta name="keywords" content="agario, agar, io, cell, cells, virus, bacteria, blob, game, games, web game, html5, fun, flash">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>BioBit | Eat Bits, Get Big.</title></title>
+
+    <link id="favicon" rel="icon" type="image/png" href="/img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Odibee+Sans:400" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Rubik:600" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/index.css" rel="stylesheet">
+    <link href="assets/css/gallery.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Odibee Sans:400&display=swap" rel="stylesheet">
+
+    <script src="assets/js/quadtree.js"></script>
+    <script src="assets/js/main_out.js"></script>
+    <script src="https://kit.fontawesome.com/fef8b917d2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" integrity="sha512-NXUhxhkDgZYOMjaIgd89zF2w51Mub53Ru3zCNp5LTlEzMbNNAjTjDbpURYGS5Mop2cU4b7re1nOIucsVlrx9fA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js" integrity="sha512-lOrm9FgT1LKOJRUXF3tp6QaMorJftUjowOWiDcG5GFZ/q7ukof19V0HKx/GWzXCdt9zYju3/KhBNdCLzK8b90Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <div id="gallery" onclick="if (event.target == this) this.hide()" style="display: none;">
+        <div id="gallery-content">
+            <div id="gallery-header">If skins do not load, refresh the page</div>
+            <div id="gallery-body"></div>
+        </div>
+    </div>
+     <div id="overlays" style="display: none;">
+                 <div id="helloDialog">
+            <div id="leftPanel">                <center>
+          <p id="cus">
+            <strong>Settings</strong>
+              </p></center>
+ <div id="settings" class="checkbox">
+                <div style="margin-left: 30px;">
+                  <br />
+                    <label><input id="showSkins" type="checkbox">⠀⠀Skins</label><br />
+                    <label><input id="showNames" type="checkbox">⠀⠀Names</label><br />
+                    <label><input id="darkTheme" type="checkbox">⠀⠀Dark Theme</label><br />
+                    <label><input id="showColor" type="checkbox">⠀⠀Color</label><br />
+                    <label><input id="showMass" type="checkbox">⠀⠀Mass</label><br />
+                    <label><input id="showChat" type="checkbox">⠀⠀Chat</label><br />
+                    <label><input id="showMinimap" type="checkbox">⠀⠀Minimap</label><br />
+                    <label><input id="showPosition" type="checkbox">⠀⠀Position</label><br />
+                    <label><input id="showBorder" type="checkbox">⠀⠀Border</label><br />
+                    <label><input id="showGrid" type="checkbox">⠀⠀Grid</label><br />
+                    <label><input id="moreZoom" type="checkbox">⠀⠀Zoomout</label><br />
+                    <label><input id="fillSkin" type="checkbox">⠀⠀Fill Skin</label><br />
+                     <label><input id="backgroundSectors" type="checkbox">⠀⠀Background Sectors</label><br />
+                  <label><input id="jellyPhysics" type="checkbox">⠀⠀Jelly Physics</label>
+                  </div>
+              </div></div>
+                             <div id="rightPanel">
+                                 <center><strong></strong><br /><center>
+              <button id="serv-ultra" onclick="setserver('#');"><img src="https://cdn.glitch.com/f25d0bf7-618b-46bd-9d5c-0a39288bb9c6%2Fbebl-ultrasplit.png?v=1574300203747" height="50px" style="margin-bottom:5px;" /><br />To Be Determined</button>
+              <button id="serv-bots" onclick="setserver('#');"><img src="https://cdn.glitch.com/f25d0bf7-618b-46bd-9d5c-0a39288bb9c6%2Fbebl-bots.png?v=1574300197670" height="50px" style="margin-bottom:5px;" /><br />To Be Determined</button><br />
+              <button id="serv-virus" onclick="setserver('#');"><img src="https://cdn.glitch.com/f25d0bf7-618b-46bd-9d5c-0a39288bb9c6%2Fbebl-virus-feed.png?v=1574300200422" height="50px" width="55px" style="margin-bottom:5px;" /><br />To Be Determined</button>
+              <button id="serv-feed" onclick="setserver('#');"><img src="https://cdn.glitch.com/f25d0bf7-618b-46bd-9d5c-0a39288bb9c6%2Fbebl-selfeed.png?v=1574300198272" height="40px" width="65px" style="margin-bottom:10px; margin-top:5px;" /><br />To Be Determined</button>
+              </center>
+                               <strong><a href="/" target="_blank"><button id="role-form">Apply for a Role</button></a><a href="/" target="_blank"><button id="more-games">More Games</button></a></strong>
+                                 </center></div>
+            <div id="midPanel"> 
+              <div class="form-group">
+              <h2 id="title">
+      <center><img src="/img/title.png" height="93px" width="178px"></center>
+                <strong><center>
+                </center></strong></h2>
+              <br />
+              </div>
+              <center></center>
+            <div class="form-group"><strong>
+              <center>
+                <input id="nick" class="form-control" placeholder="Nickname" maxlength="10" style="text-align:left;">
+                        <input id="skin" class="form-control"  placeholder="Skin Name" ng-model="currentSkin"></center>
+</strong><br />
+                   </div>
+<strong>
+  
+<button id="skins" onclick="openSkinsList()" class="btn btn-warning btn-spectate btn-needs-server" style="font-family: 'Odibee Sans', sans-serif;">Skins *NEW*</button></strong>
+
+              <div id="captcha" data-sitekey="2599d777-6788-44b5-a4cb-d900238d211e" data-callback="onloadCallback" style="position: absolute; "></div>
+
+            <button id="play-btn" class="btn btn-play btn-primary btn-needs-server" style="font-family: 'Odibee Sans', sans-serif;">Join!</button>
+              
+  <button id="spectate-btn" onclick="spectate()" class="btn btn-warning btn-spectate btn-needs-server" style="font-family: 'Odibee Sans', sans-serif;">Spectate</button></strong>
+                   <div id="instructions">
+                     <center><span>Copyright 2023 | SlimySlug Studios</span></center>
+            </div></div>
+
+            <hr>
+            <div id="footer">
+                   </div>  
+       </div></div>
+
+    <div id="connecting">
+        <div id="connecting-content">
+          <center><strong><h2 style="-webkit-text-stroke-width: 3.2px; -webkit-text-stroke-color: #000; color:#fff; font-size: 50px; font-family: 'Odibee Sans', sans-serif;">Connecting..</h2></strong></center>
+          <strong><p id="connect"><center>The servers can take up to 30 seconds to start.</center></p></strong>
+        </div>
+    </div>
+
+ 
+
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <input type="text" id="chat_textbox" placeholder="Press enter to chat" maxlength="200">
+    <div style="font-family:'Odibee Sans'">&nbsp;</div> 
+  <script>function showNotification(message, type) {
+            new Noty({
+                text: message,
+                type: type,
+                timeout: 3000 
+            }).show();
+        }
+const playButton = document.getElementById('play-btn');
+
+
+playButton.addEventListener('click', function(){
+    showNotification("BioBit의 자세한 <a href='https://coding1129.hashnode.dev/biobit' target='_blank'>사용법</a>를 알아보세요!", "info");
+});
+</script>
+</body>
+</html>
+
